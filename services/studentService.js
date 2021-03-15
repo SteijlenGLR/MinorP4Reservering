@@ -4,11 +4,11 @@ export const getStudenten = async () => {
     const studenten = await studentRepo.selectAll();
     
     // Maak een Array aan waarin we alle studenten kunnen opslaan
-    let result = [];
+    const result = [];
 
     // Doorloop de studenten resultset en koppel deze aan de juiste properties
     for (const [studentNummer, studentNaam, studentTelefoon, studentKlas] of studenten) {
-        let obj = new Object();
+        const obj = new Object();
 
         obj.studentNummer = studentNummer;
         obj.studentNaam = studentNaam;
@@ -26,7 +26,7 @@ export const getStudentDetails = async studentNummer => {
     
     const studenten = await studentRepo.selectByStudentNummer(studentNummer);
 
-    let obj = new Object();
+    const obj = new Object();
 
     for (const [studentNummer, studentNaam, studentTelefoon, studentKlas] of studenten) {
         
