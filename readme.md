@@ -16,8 +16,20 @@ De code maakt gebruik van:
 
 1.  Deno, een (Veilige, lichter en misschien wel beter?) alternatief voor Node.js (Server Side Javascript):  https://deno.land/
 2.  OAK voor het routeren van de requests (Router): https://deno.land/x/oak
-3.  SQLite voor het opslaan van de database data (Database): 
-4.  Om vanuit Deno https://dyedgreen.github.io/deno-sqlite/#/examples
+3.  SQLite voor het opslaan van de database data (Database): https://www.sqlite.org/index.html
+4.  Om vanuit Deno te koppelen met SQLite maken we gebruik van deno-sqlite: https://dyedgreen.github.io/deno-sqlite/#/examples
+
+Om Deno te kunnen gebruiken op je PC/Server moet je daarvoor eerst deno installeren.
+Meer details over de installatie van deno kan je vinden op:
+https://deno.land/#installation
+
+
+Tools die je kunt gebruiken voor het werken met deno:
+1.  Microsoft Visual Studio Code
+2.  Deno for Visual Studio Code Extension: denoland.vscode-deno (V3.2.0 op moment van schrijven)
+3.  DB Browser for SQLite voor het bewerken en aanmaken van SQLite databases: https://sqlitebrowser.org/
+
+
 
 
 ***Om de code te runnen:*** 
