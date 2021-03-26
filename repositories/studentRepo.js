@@ -1,6 +1,15 @@
 import db from "../db/database.js";
 
 class StudentRepo {
+    
+    selectAll() { 
+        return db.query("SELECT studentNummer, studentNaam, studentTelefoon, studentKlas FROM student ORDER BY studentNummer");
+    }
+
+    selectByStudentNummer(studentNummer) {
+        return db.query("SELECT studentNummer, studentNaam, studentTelefoon, studentKlas FROM student WHERE studentNummer = ?", [studentNummer]);
+    }
+    
     create(student) {
         return db.query("INSERT INTO student(studentNummer, studentNaam, studentTelefoon, studentKlas) VALUES(?, ?, ?, ?)", [
             student.studentNummer,
@@ -9,14 +18,7 @@ class StudentRepo {
             student.studentKlas
         ]);
     }
-
-    selectAll() { 
-        return db.query("SELECT studentNummer, studentNaam, studentTelefoon, studentKlas FROM student ORDER BY studentNummer");
-    }
-
-    selectByStudentNummer(studentNummer) {
-        return db.query("SELECT studentNummer, studentNaam, studentTelefoon, studentKlas FROM student WHERE studentNummer = ?", [studentNummer]);
-    }
+    
     update(studentNummer, student) {
     
         var query = "UPDATE student SET studentNaam = ?, studentTelefoon = ?, studentKlas = ? WHERE studentNummer = ?";
